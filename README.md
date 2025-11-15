@@ -27,6 +27,7 @@ Este repositorio incluye:
 │ ├── fifa_worldcup_fixture_2026.csv
 │ ├── fifa_worldcup_historical_data.csv
 │ ├── fifa_worldcup_missing_data.csv
+│ ├── grupos_2026.json
 │ └── format_fixture_data.csv
 ├── scrapping/
 │ ├── Web_Scrapping_bs4.ipynb
