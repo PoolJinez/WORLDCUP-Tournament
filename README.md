@@ -1,27 +1,28 @@
 # FIFA World Cup — Data Scraping & 2026 Prediction
 
-Este proyecto tiene como objetivo **extraer datos históricos de los Mundiales de Fútbol (FIFA World Cup)** usando Web Scraping desde Wikipedia, construir un **dataset limpio de resultados pasados** y posteriormente utilizar esa información para **predecir posibles resultados del Mundial 2026**.
+This project aims to **extract historical FIFA World Cup data** using Web Scraping from Wikipedia, build a **clean dataset of past match results**, and then use that information to **predict possible outcomes for the 2026 World Cup**.
 
-Este repositorio incluye:
-- Código de scraping (`webscraping_data.ipynb`)
-- Código de predicción basado en machine learning (`prediction_2026_worldcup.ipynb`)
-- Datasets generados con el scraping (CSV)
-
----
-
-## 1. Objetivo del Proyecto
-
-1. **Recolectar datos históricos** de todos los mundiales desde 1930 hasta 2018.  
-2. **Limpiar, estructurar y guardar** esos datos en archivos CSV.  
-3. **Entrenar modelos de machine learning** para analizar patrones de resultados.  
-4. **Predecir los resultados del Mundial 2026** usando características históricas.
+This repository includes:
+- Scraping code (`webscraping_data.ipynb`)
+- Machine learning prediction code (`prediction_2026_worldcup.ipynb`)
+- Datasets generated through scraping (CSV)
 
 ---
 
-## 2. Contenidos del Repositorio
+## 1. Project Objective
+
+1. **Collect historical data** from all World Cups from 1930 to 2018.  
+2. **Clean, structure, and store** that data into CSV files.  
+3. **Train machine learning models** to analyze result patterns.  
+4. **Predict outcomes for the 2026 World Cup** using historical features.
+
+---
+
+## 2. Repository Contents
+
 /
-├── prediction_2026_worldcup.ipynb # Modelo predictivo para el Mundial 2026 
-├── clean_csv_files-format_fixtures.ipynb # Limpieza y formateo de archivos csv  
+├── prediction_2026_worldcup.ipynb # Predictive model for the 2026 World Cup
+├── clean_csv_files-format_fixtures.ipynb # Cleaning and formatting of CSV files
 ├── data/
 │ ├── clean_fifa_worldcup_historical_data.csv
 │ ├── fifa_worldcup_fixture_2026.csv
@@ -34,56 +35,71 @@ Este repositorio incluye:
 │ └── Web_Scrapping_selenium.ipynb
 └── README.md
 
+---
+
 ## 3. Web Scraping
 
-La carpeta 'scrapping' contiene:
+The `scrapping` folder contains:
 
-**`Web_Scrapping_bs4.ipynb`**:
+### **`Web_Scrapping_bs4.ipynb`**
 
-- Extrae resultados de cada partido por mundial  
-- Omite los años que no se jugaron (1942 y 1946)  
-- Guía paso a paso cómo usar `requests`, `BeautifulSoup` y `pandas`  
-- Genera datasets limpios para análisis posteriores  
+- Extracts match results for each World Cup edition  
+- Skips the years not played (1942 and 1946)  
+- Provides a step-by-step guide using `requests`, `BeautifulSoup`, and `pandas`  
+- Generates clean datasets for later analysis  
 
-Tecnologías usadas:
+**Technologies used:**
 - `requests`
 - `BeautifulSoup4`
 - `pandas`
 - `lxml`
 
-**`Web_Scrapping_selenium.ipynb`**:
+### **`Web_Scrapping_selenium.ipynb`**
 
-- Extrae resultados de cada partido de los Mundiales, incluyendo años faltantes.  
-- Omite los años que no se jugaron (1942 y 1946).  
-- Automatiza la navegación en Wikipedia con Selenium y selecciona elementos con XPath.  
-- Guarda los datos en un CSV listo para análisis posteriores.  
+- Extracts match results for all World Cups, including missing years  
+- Skips editions not played (1942 and 1946)  
+- Automates navigation through Wikipedia using Selenium  
+- Selects elements via XPath  
+- Stores data in a ready-to-analyze CSV file  
 
-Tecnologías usadas:
+**Technologies used:**
 - `selenium`
 - `pandas`
 - `time`
-- `chromedriver` / `Chrome WebDriver` 
+- `chromedriver` / `Chrome WebDriver`
 
-## 4. Limpieza de Dataset y Formateo
+---
 
-En el archivo **`clean_csv_files-format_fixtures.ipynb`** se:  
-- Limpian y normalizan los datasets obtenidos de los Mundiales anteriores.  
-- Se formatea `df_fixture` para crear una versión preliminar del Mundial 2026.  
-- Permite trabajar con los datos aunque aún no se conozcan los 18 países restantes que clasificarán.
+## 4. Dataset Cleaning and Formatting
 
-## 5. Predicción del Mundial 2026
+In the notebook **`clean_csv_files-format_fixtures.ipynb`**:
 
-En el archivo **`prediction_2026_worldcup.ipynb`** se:
+- Scraped datasets are cleaned and normalized  
+- `df_fixture` is formatted to create a preliminary version of the 2026 World Cup  
+- This workflow allows working with the dataset even though the remaining 18 qualifying teams are still unknown  
+- This code create the file 'grupos_2026.json' for the tables with the groups in the WorldCup 2026
+---
 
-- Cargan los datos históricos generados en el scraping  
-- Se crean variables como goles, diferencias, rendimiento histórico, etc.  
-- Se entrena un modelo de machine learning (RandomForest, XGBoost, u otro)  
-- Se generan predicciones para los partidos del 2026
+## 5. 2026 World Cup Prediction
 
-## Autor
-Pool Jinez
+In **`prediction_2026_worldcup.ipynb`**:
 
-## Creditos
-Estas prácticas fueron realizadas siguiendo los lineamientos del YouTuber: Frank Andrade / canal: https://www.youtube.com/@thepycoachES
-Estas son practicas realizadas para llevar un registro de los códigos utilizados en los proyectos y aprendizaje autodidacta mejorando mis habilidades como 'Data Science'
-El valor añadido a este proyecto sera un analisis mas profundo en las predicciones en el Dataset utiliznado varios maodelos y metricas de precision.
+- Historical data generated during scraping is loaded  
+- Features such as goals, goal differences, historical performance, etc. are created  
+- A machine learning model is trained (RandomForest, XGBoost, or others)  
+- Predictions for the 2026 matches are generated  
+
+---
+
+## Author
+
+**Pool Jinez**
+
+---
+
+## Credits
+
+These exercises were carried out following the guidance of YouTuber **Frank Andrade**  
+Channel: https://www.youtube.com/@thepycoachES
+
+These are practice projects created to keep a record of the code used and support self-taught learning while improving my skills in **Data Science**.
